@@ -12,5 +12,6 @@ func TaskRoutes(r *gin.Engine) {
 		task.GET("/:id", controllers.GetTaskByID)
 		task.POST("/", controllers.CreateTask)
 		task.PUT("/:id", controllers.UpdateTask)
+		task.DELETE("/:id", controllers.DeleteTask)
 	}
 }

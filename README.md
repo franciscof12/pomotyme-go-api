@@ -5,7 +5,6 @@
 Welcome to the Pomotyme Go API repository, a versatile and efficient API designed for task management with an integrated Pomodoro timer feature. This project leverages the power of Go, using the Gin framework and GORM, and follows the Model-View-Controller (MVC) architectural pattern. It's equipped with robust authentication middlewares for secure user interactions and a CORS middleware for safe cross-origin resource sharing.
 
 ## TODO - features
-- **Pomodoro Sessions**: Integration of the Pomodoro technique for focused work sessions.
 - **Authentication Middleware**: Ensures secure access to user-specific resources.
 - **CORS Middleware**: Configured for handling cross-origin requests safely.
 - **Database Flexibility**: Designed to be compatible with various database models.

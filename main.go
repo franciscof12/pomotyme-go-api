@@ -10,8 +10,8 @@ import (
 
 func main() {
 	r := gin.Default()
-	initializers.ConnectDatabase()
-	// import routes from routes package
+	initializers.ConnectMysqlDatabase()
+
 	routes.UserRoutes(r)
 	routes.TaskRoutes(r)
 

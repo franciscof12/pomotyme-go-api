@@ -8,7 +8,7 @@ import (
 
 var DB *gorm.DB
 
-func ConnectDatabase() {
+func ConnectMysqlDatabase() {
 	dsn := "root@tcp(localhost:3306)/golangpomotyme?charset=utf8mb4&parseTime=True&loc=Local"
 
 	database, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})

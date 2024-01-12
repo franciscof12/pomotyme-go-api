@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func UserRoutes(r *gin.Engine) {
+func TaskRoutes(r *gin.Engine) {
 	r.GET("/users", controllers.GetUsers)
 	r.POST("/users", controllers.CreateUser)
 	r.GET("/users/:id", controllers.GetUserByID)

@@ -7,7 +7,12 @@ type User struct {
 	Name     string `json:"name"`
 	Email    string `json:"email"`
 	Password string `json:"password"`
+	Tasks    []Task `json:"tasks"`
 }
+
+/*
+	TODO: Add Login and Register functions
+*/
 
 func GetAllUsers(db *gorm.DB) ([]User, error) {
 	var users []User

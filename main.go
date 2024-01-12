@@ -12,7 +12,8 @@ func main() {
 	r := gin.Default()
 	initializers.ConnectDatabase()
 	// import routes from routes package
-	routes.InitRoutes(r)
+	routes.UserRoutes(r)
+	routes.TaskRoutes(r)
 
 	if err := r.Run(); err != nil {
 		log.Fatalf("Error al iniciar el servidor: %s\n", err)

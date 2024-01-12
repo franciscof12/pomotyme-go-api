@@ -16,7 +16,7 @@ func ConnectMysqlDatabase() {
 	if err != nil {
 		panic("Failed to connect to database!")
 	}
-	err = database.AutoMigrate(&models.User{}, &models.Task{})
+	err = database.AutoMigrate(&models.User{}, &models.Task{}, &models.Pomodoro{})
 	if err != nil {
 		panic("Failed to migrate database!")
 	}

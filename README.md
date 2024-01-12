@@ -1,7 +1,4 @@
-## Built With ❤️ with Golang
-[Go](https://golang.org/)
-
----
+## Built With ❤️ with [Golang](https://golang.org/)
 
 # Pomotyme Go API
 

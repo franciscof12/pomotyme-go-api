@@ -1,7 +1,4 @@
-...
-
 ## Built With ❤️ with Golang
-
 [Go](https://golang.org/)
 
 ---

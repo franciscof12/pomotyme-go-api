@@ -22,7 +22,9 @@ func GetUsers(c *gin.Context) {
 
 func GetUserByID(c *gin.Context) {
 	id := c.Param("id")
-	user, err := models.GetUserByID(initializers.DB, id)
+	db := c.MustGet("databaseConn").(app.Repository)
+	user, err := db.GetUserByID(id)
+
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return

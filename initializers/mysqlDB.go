@@ -35,3 +35,9 @@ func (m *MySQLDatabase) GetAllUsers() ([]models.User, error) {
 	result := m.DB.Find(&users)
 	return users, result.Error
 }
+
+func (m *MySQLDatabase) GetUserByID(id string) (models.User, error) {
+	var user models.User
+	result := m.DB.First(&user, id)
+	return user, result.Error
+}

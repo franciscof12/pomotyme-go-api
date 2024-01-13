@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/franciscof12/pomotyme-go-api/v1/app"
 	"net/http"
 
 	"github.com/franciscof12/pomotyme-go-api/v1/initializers"
@@ -10,7 +11,8 @@ import (
 )
 
 func GetUsers(c *gin.Context) {
-	users, err := models.GetAllUsers(initializers.DB)
+	db := c.MustGet("databaseConn").(app.Repository)
+	users, err := db.GetAllUsers()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -20,7 +22,9 @@ func GetUsers(c *gin.Context) {
 
 func GetUserByID(c *gin.Context) {
 	id := c.Param("id")
-	user, err := models.GetUserByID(initializers.DB, id)
+	db := c.MustGet("databaseConn").(app.Repository)
+	user, err := db.GetUserByID(id)
+
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return

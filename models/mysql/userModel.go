@@ -14,12 +14,6 @@ type User struct {
 	TODO: Add Login and Register functions
 */
 
-func GetAllUsers(db *gorm.DB) ([]User, error) {
-	var users []User
-	result := db.Find(&users)
-	return users, result.Error
-}
-
 func GetUserByID(db *gorm.DB, id string) (User, error) {
 	var user User
 	result := db.First(&user, id)

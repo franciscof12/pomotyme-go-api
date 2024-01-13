@@ -1,7 +1,7 @@
 package initializers
 
 import (
-	models "github.com/franciscof12/pomotyme-go-api/v1/models/mysql"
+	models "github.com/franciscof12/pomotyme-go-api/v1/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -39,5 +39,23 @@ func (m *MySQLDatabase) GetAllUsers() ([]models.User, error) {
 func (m *MySQLDatabase) GetUserByID(id string) (models.User, error) {
 	var user models.User
 	result := m.DB.First(&user, id)
+	return user, result.Error
+}
+
+func (m *MySQLDatabase) CreateUser() (models.User, error) {
+	var user models.User
+	result := m.DB.Create(&user)
+	return user, result.Error
+}
+
+func (m *MySQLDatabase) UpdateUser() (models.User, error) {
+	var user models.User
+	result := m.DB.Save(&user)
+	return user, result.Error
+}
+
+func (m *MySQLDatabase) DeleteUser() (models.User, error) {
+	var user models.User
+	result := m.DB.Delete(&user)
 	return user, result.Error
 }

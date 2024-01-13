@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/franciscof12/pomotyme-go-api/v1/initializers"
-	models "github.com/franciscof12/pomotyme-go-api/v1/models/mysql"
+	models "github.com/franciscof12/pomotyme-go-api/v1/models"
 	"github.com/franciscof12/pomotyme-go-api/v1/schemas"
 	"github.com/gin-gonic/gin"
 )

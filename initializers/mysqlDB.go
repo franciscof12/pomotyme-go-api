@@ -8,7 +8,11 @@ import (
 
 var DB *gorm.DB
 
-func ConnectMysqlDatabase() {
+type MySQLDatabase struct {
+	DB *gorm.DB
+}
+
+func ConnectMysqlDatabase() *MySQLDatabase {
 	dsn := "root@tcp(localhost:3306)/golangpomotyme?charset=utf8mb4&parseTime=True&loc=Local"
 
 	database, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
@@ -21,5 +25,13 @@ func ConnectMysqlDatabase() {
 		panic("Failed to migrate database!")
 	}
 
-	DB = database
+	return &MySQLDatabase{
+		DB: database,
+	}
+}
+
+func (m *MySQLDatabase) GetAllUsers() ([]models.User, error) {
+	var users []models.User
+	result := m.DB.Find(&users)
+	return users, result.Error
 }
